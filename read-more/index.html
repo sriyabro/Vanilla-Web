@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>READ MORE</title>
+	<style type="text/css">
+		#btn {
+			color: blue;
+			cursor: pointer;
+		}
+		.more {
+			display: none;
+		}
+		.show {
+			display: inline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<p id="text">
+			<span id="preview"></span><span class="more" id="more"></span><span id="btn"
+				onclick="toggleVisibility()"></span>
+		</p>
+	</div>
+	<script>
+		var btn = document.getElementById("btn");
+		var content = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea praesentium excepturi provident culpa mollitia temporibus ad adipisci suscipit voluptates, pariatur repellat veniam! Doloribus eius veritatis, illo cupiditate aliquid distinctio mollitia fuga omnis libero consectetur accusamus! Maxime mollitia fugiat cupiditate. Consequatur odit officiis atque architecto. Voluptas eveniet, laborum facilis vero autem quo laboriosam? Maxime illum facere, tempora laudantium consequatur labore doloremque necessitatibus ex natus explicabo dolore itaque modi odit! Voluptas dolorum perferendis eveniet, porro nisi tempore ex aliquid! Eius repellat, quidem ullam possimus porro dicta aspernatur quas quod non quis perspiciatis deleniti atque maxime rerum sed expedita veritatis iure. Cupiditate, minus.'
+		document.addEventListener('DOMContentLoaded', function () {
+			if (content.length > 100) {
+				document.getElementById("preview").innerHTML = content.substr(0, 100);
+				document.getElementById('more').innerHTML = content.substr(100);
+				btn.innerHTML = ' ...read more';
+			} else {
+				document.getElementById("preview").innerHTML = content;
+			}
+
+		}, false);
+
+		function toggleVisibility() {
+			if (btn.innerHTML === ' ...read more') {
+				btn.innerHTML = ' show less';
+			}
+			else {
+				btn.innerHTML = ' ...read more';
+			}
+			document.getElementById("more").classList.toggle("show");
+		}
+	</script>
+</body>
+
+</html>
