@@ -24,13 +24,11 @@ const submitForm = () => {
 
 const sendEmail = (msgBody) => {
   Email.send({
-    Host: "smtp.sendgrid.net",
-    Username: "apikey",
-    Password:
-      "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",
-    // To: 'hgsahan3@gmail.com',
-    To: "sriyabro@gmail.com",
-    From: "hsriyanjith@gmail.com",
+    Host: "smtp.YOUR_PROVIDER.com",
+    Username: "USERNAME",
+    Password: "PASSWORD",
+    To: "TO_EMAIL",
+    From: "FROM EMAIL",
     Subject: "New Contact Form Message",
     Body: msgBody,
   }).then((res) => {
