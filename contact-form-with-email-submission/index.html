@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT FORM</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form id="contact-form" oninput="validateFields()">
+            <label for="nameToContact">Name</label>
+            <input type="text" id="nameToContact" name="nameToContact" placeholder="Your name ..">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address ..">
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject ...">
+
+            <label for="subject">Message</label>
+            <textarea id="messsage" name="messsage" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input id="button" type="button" value="Submit" onclick="submitForm()" disabled>
+        </form>
+    </div>
+    <div id="snackbar"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
