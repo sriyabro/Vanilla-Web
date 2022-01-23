@@ -3,9 +3,10 @@ const validateFields = () => {
   const email = document.getElementById("email");
   const subject = document.getElementById("subject").value;
   const msg = document.getElementById("messsage").value;
-  const btn = document.getElementById("button");
+  const btn = document.getElementById("btn");
   if (name && email.value && email.validity.valid && subject && msg) {
     btn.disabled = false;
+    btn.addEventListener('click', submitForm);
   } else {
     btn.disabled = true;
   }
@@ -56,6 +57,6 @@ const showSnackbar = (success) => {
   snackbar.classList.add("show");
   setTimeout(() => {
     snackbar.className = "";
-    location.reload();
+    location.reload(); // reloads page after sending email
   }, 3000);
 };
